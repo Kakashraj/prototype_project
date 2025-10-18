@@ -22,7 +22,9 @@ class ConnectionData(BaseModel):
     connections: list
 
 GENERATED_FILE = "generated_arduino.ino"
-
+@app.get("/test")
+async def test_api():
+    return {"status": "ok", "message": "Backend API is running!"}
 @app.post("/generate")
 async def generate_code(data: ConnectionData):
     # Convert Pydantic model to JSON string
