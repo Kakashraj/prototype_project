@@ -1,0 +1,44 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "label": "Humidity Sensor",
+      "type": "sensor",
+      "value": 60,
+      "condition": {
+        "operator": ">",
+        "action": "ON"
+      }
+    },
+    {
+      "id": "node_1",
+      "label": "Temperature Sensor",
+      "type": "sensor",
+      "value": 30,
+      "condition": {
+        "operator": ">",
+        "action": "ON"
+      }
+    },
+    {
+      "id": "node_2",
+      "label": "Arduino Uno",
+      "type": "component",
+      "value": false,
+      "condition": {
+        "operator": "",
+        "action": ""
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "Temperature Sensor",
+      "to": "Arduino Uno"
+    },
+    {
+      "from": "Humidity Sensor",
+      "to": "Arduino Uno"
+    }
+  ]
+}
