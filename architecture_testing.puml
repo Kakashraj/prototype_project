@@ -1,0 +1,17 @@
+@startuml
+actor User
+participant "LLM Proxy API" as API
+database "MySQL DB" as DB
+participant "OpenAI API" as LLM
+
+User -> API : Send request (prompt + API key)
+API -> DB : Validate API key
+DB --> API : User ID
+
+API -> LLM : Forward prompt
+LLM --> API : Stream response
+
+API -> DB : Log token usage
+API --> User : Send response
+
+@enduml
